@@ -1,3 +1,34 @@
-body{
+body, html{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+}
+
+.publishers, .subscribers{
+    height: auto;
+}
+
+.pub-container{
+    background-color: bisque;
+    height: 80%;
+}
+
+.sub-container{
+    background-color: aquamarine;
+    height: 80%;
+}
+
+.publisher-item{
+    width: 20%;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+.publisher-item input{
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+}
+
+.publisher-item .inputContent{
+    height: 50px;
 }
