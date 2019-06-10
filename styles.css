@@ -8,7 +8,7 @@ body, html{
 }
 
 .pub-container{
-    background-color: bisque;
+    /* background-color: bisque; */
     height: 80%;
 }
 
@@ -19,8 +19,10 @@ body, html{
 
 .publisher-item{
     width: 20%;
+    margin: 5px;
     padding: 5px;
     border: 1px solid #000;
+    display: inline-block;
 }
 
 .publisher-item input{
@@ -31,4 +33,12 @@ body, html{
 
 .publisher-item .inputContent{
     height: 50px;
+}
+
+.subscriber-item{
+    width: 20%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+    display: inline-block;
 }

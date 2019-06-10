@@ -15,10 +15,18 @@ function init(){
         var publishersContainer = document.getElementsByClassName("pub-container")[0];
         console.log(publishersContainer);
         var pub = new Publisher(publisherName);
-        var elementString = '<div class="publisher-item"> <h2>Name</h2> <input type="text" placeholder="Topic" class="inputTopic"> <input type="text" placeholder="Content" class="inputContent"> <input type="button" value="Publish"> <div class="topics-list"></div> <div class="posts-container"></div> </div>';
+        var elementString = '<div class="publisher-item" id="'+pub.id+'"> <h2>'+publisherName+'</h2> <input id="topic'+pub.id+'" type="text" placeholder="Topic" class="inputTopic"> <input id="content'+pub.id+'" type="text" placeholder="Content" class="inputContent"> <input type="button" value="Publish" id="btn'+pub.id+'"> <div class="topics-list"></div> <div class="posts-container"></div> </div>';
         publishersContainer.insertAdjacentHTML("beforeend", elementString)
-        console.log(pub);
-        
+        //After creating the element we need to attach the events to its buttons
+        var itemButton = document.getElementById("btn"+pub.id);
+        var itemTopic = document.getElementById("topic"+pub.id);
+        var itemContent = document.getElementById("content"+pub.id);
+        itemButton.addEventListener("click", function(){
+            console.log("The publication is: ")
+            console.log("Topic: ", itemTopic.value);
+            console.log("Content: ", itemContent.value);
+        });
+
     });
 
     removePubBtn.addEventListener("click", function(){
@@ -35,9 +43,11 @@ function init(){
 }
 
 function Publisher(  name ){
+
     this.name = name;
     this.topics = [];
     this.posts = [];
+    this.id = (new Date()).getTime();
 
     function addTopic(topicName){
         this.topics.push(topicName);
