@@ -58,6 +58,21 @@ function Publisher(  name ){
     }
 }
 
+function Subscriber(  name ){
+
+    this.name = name;
+    this.topics = [];
+    this.posts = [];
+    this.id = (new Date()).getTime();
+
+    function addTopic(topicName){
+        this.topics.push(topicName);
+    }
+
+    function post(post){
+        this.posts.push(post);
+    }
+}
 
 window.onload = init;
 
